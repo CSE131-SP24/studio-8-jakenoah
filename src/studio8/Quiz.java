@@ -34,7 +34,7 @@ public class Quiz {
 			System.out.println(questions[i].checkAnswer(answer));
 				
 		}
-		System.out.println("Your total score is " + count+ " Out of " +getTotalPoints());
+		System.out.println("Your total score is " + count+ " out of " +getTotalPoints());
 	}
 	
 	public static void main(String[] args) {

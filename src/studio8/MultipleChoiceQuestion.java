@@ -14,7 +14,7 @@ public class MultipleChoiceQuestion extends Question {
 		
 		 super.displayPrompt();
 		 
-		 for (int i = 1; i < 5;i++) {
+		 for (int i = 1; i < choices.length;i++) {
 			 System.out.println("Choice " + i + " is " + choices[i-1]);
 		 }
 		
