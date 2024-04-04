@@ -1,15 +1,15 @@
 package studio8;
 
 public class SelectAllQuestion extends MultipleChoiceQuestion {
-
+    private int pointers;
 	public SelectAllQuestion(String prompt, String answer, String[] choices) {
-		//Hint: 1 point per choice
-		//FIXME
+		super(prompt,answer,choices.length,choices);
+		pointers=choices.length;
 	}
 	
 	public int checkAnswer(String givenAnswer) {
-		//FIXME Should return partial credit (if earned)!
-		return 0;
+		return pointers - findMissingCorrectAnswers(givenAnswer)-findIncorrectGivenAnswers(givenAnswer);
+		
 	}
 
 	private int findMissingCorrectAnswers(String givenAnswer) {

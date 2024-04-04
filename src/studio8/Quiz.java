@@ -5,9 +5,10 @@ import java.util.Scanner;
 public class Quiz {
 
 	private Question[] questions;
-	
+	private int count;
 	public Quiz(Question[] questions) {
 		this.questions = questions;
+		int count = 0;
 	}
 	
 	private String getUserAnswer() {
@@ -26,7 +27,14 @@ public class Quiz {
 	}
 	
 	public void takeQuiz() {
-		//FIXME
+		for(int i = 0; i<questions.length; i ++) {
+			questions[i].displayPrompt();
+			String answer = getUserAnswer();
+			count = count + questions[i].checkAnswer(answer);
+			System.out.println(questions[i].checkAnswer(answer));
+				
+		}
+		System.out.println("Your total score is " + count+ " Out of " +getTotalPoints());
 	}
 	
 	public static void main(String[] args) {
